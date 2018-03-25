@@ -1,5 +1,5 @@
 name: aws-ses-easy
-version: '0.0.0'
+version: '0.1.0'
 github: jxv/aws-ses-easy
 license: BSD3
 license-file: LICENSE.md

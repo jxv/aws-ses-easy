@@ -13,13 +13,13 @@ import Control.Monad.Catch (MonadCatch(..))
 
 
 class Monad m => Service m where
-  sendEmail :: Email -> (Email -> m ()) -> m ()
+  sendEmail :: Email -> m () -> m ()
 
-sendEmail' :: (MonadIO m, MonadReader s m, MonadCatch m) => (s -> Aws.Env) -> Email -> (Email -> m ()) -> m ()
+sendEmail' :: (MonadIO m, MonadReader s m, MonadCatch m) => (s -> Aws.Env) -> Email -> m () -> m ()
 sendEmail' getEnv email failed = do
   env <- asks getEnv
   let msg = fromEmail email
-  _ <- catching_ Aws._MessageRejected (awsSendEmail env msg >> return ()) (failed email)
+  _ <- catching_ Aws._MessageRejected (awsSendEmail env msg >> return ()) failed
   return ()
   where
     awsSendEmail env msg = liftIO $ Aws.runResourceT . Aws.runAWS env $ Aws.send msg
