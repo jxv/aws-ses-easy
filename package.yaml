@@ -1,0 +1,58 @@
+name: aws-ses-easy
+version: '0.0.0'
+github: jxv/aws-ses-easy
+license: BSD3
+author: Joe Vargas
+maintainer: Joe Vargas
+# synopsis: A new Haskeleton package.
+# description: aws-ses-easy is a new Haskeleton package.
+# category: Other
+
+extra-source-files:
+- CHANGELOG.md
+- LICENSE.md
+- package.yaml
+- README.md
+- stack.yaml
+
+ghc-options: -Wall
+
+library:
+  dependencies:
+  - base
+  - amazonka
+  - amazonka-ses
+  - lens
+  - lucid
+  - mtl
+  - text
+  - text-conversions
+  - exceptions
+  source-dirs: library
+
+benchmarks:
+  aws-ses-easy-benchmarks:
+    source-dirs: benchmark
+    main: Main.hs
+    dependencies:
+    - base
+    - aws-ses-easy
+    - criterion
+    ghc-options:
+    - -rtsopts
+    - -threaded
+    - -with-rtsopts=-N
+
+tests:
+  aws-ses-easy-test-suite:
+    source-dirs: test-suite
+    main: Main.hs
+    dependencies:
+    - base
+    - aws-ses-easy
+    - tasty
+    - tasty-hspec
+    ghc-options:
+    - -rtsopts
+    - -threaded
+    - -with-rtsopts=-N
