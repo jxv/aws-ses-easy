@@ -4,8 +4,8 @@ github: jxv/aws-ses-easy
 license: BSD3
 author: Joe Vargas
 maintainer: Joe Vargas
-# synopsis: A new Haskeleton package.
-# description: aws-ses-easy is a new Haskeleton package.
+synopsis: Opinionated use of Amazonka's SES for ease
+description: Opinionated use of Amazonka's SES for ease
 # category: Other
 
 extra-source-files:
