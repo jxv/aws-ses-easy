@@ -6,7 +6,7 @@ author: Joe Vargas
 maintainer: Joe Vargas
 synopsis: Opinionated use of Amazonka's SES for ease
 description: Opinionated use of Amazonka's SES for ease
-# category: Other
+category: Network
 
 extra-source-files:
 - CHANGELOG.md
