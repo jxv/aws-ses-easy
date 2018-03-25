@@ -2,9 +2,10 @@ name: aws-ses-easy
 version: '0.0.0'
 github: jxv/aws-ses-easy
 license: BSD3
+license-file: LICENSE.md
 author: Joe Vargas
 maintainer: Joe Vargas
-synopsis: Opinionated use of Amazonka's SES for ease
+synopsis: Wrapper over Amazonka's SES
 description: Opinionated use of Amazonka's SES for ease
 category: Network
 
@@ -19,7 +20,7 @@ ghc-options: -Wall
 
 library:
   dependencies:
-  - base
+  - base >= 4.5 && <5
   - amazonka
   - amazonka-ses
   - lens
